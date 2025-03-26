@@ -5,7 +5,7 @@ import datetime
 import time
 
 
-FILE = os.path.join(os.getcwd(), "networkinfo.log")
+FILE = os.path.join(os.getcwd(), "simple_defense_tool/networkinfo.log")
 
 # creating log file in the currenty directory
 # ??getcwd?? get current directory,
@@ -24,7 +24,8 @@ def ping():
 		# AF_INET: address family
 		# SOCK_STREAM: type for TCP
 
-		host = "8.8.8.8"
+		host = "144.75.132.1"
+		# host = "localhost"
 		port = 53
 
 		server_address = (host, port)
@@ -91,27 +92,27 @@ def main():
 	monitoring_date_time = "monitoring started at: " + \
 		str(monitor_start_time).split(".")[0]
 
-	if first_check():
-		# if true
-		print(monitoring_date_time)
-		# monitoring will only start when
-		# the connection will be acquired
+	# if first_check():
+	# 	# if true
+	# 	print(monitoring_date_time)
+	# 	# monitoring will only start when
+	# 	# the connection will be acquired
 
-	else:
-		# if false
-		while True:
+	# else:
+	# 	# if false
+	# 	while True:
 		
-			# infinite loop to see if the connection is acquired
-			if not ping():
+	# 		# infinite loop to see if the connection is acquired
+	# 		if not ping():
 				
-				# if connection not acquired
-				time.sleep(1)
-			else:
+	# 			# if connection not acquired
+	# 			time.sleep(1)
+	# 		else:
 				
-				# if connection is acquired
-				first_check()
-				print(monitoring_date_time)
-				break
+	# 			# if connection is acquired
+	# 			first_check()
+	# 			print(monitoring_date_time)
+	# 			break
 
 	with open(FILE, "a") as file:
 	
