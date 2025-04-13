@@ -1,5 +1,11 @@
 # ignore ALL .log files
 *.log
 
+# ignore ALL .txt files
+*.txt
+
+# ignore ALL .txt files
+*.csv
+
 # ignore ALL files in ANY directory named .venv
 .venv/ 
